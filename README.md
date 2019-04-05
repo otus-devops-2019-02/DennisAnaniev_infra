@@ -1,3 +1,6 @@
+testapp_IP = 35.240.35.4
+testapp_port = 9292
+
 gcloud compute instances create reddit-app1 \
   --boot-disk-size=10GB \
   --image-family ubuntu-1604-lts \
