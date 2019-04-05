@@ -1,9 +1,18 @@
-#otus_ananiev_infra
-#ssh connect to remote host via bastion
+gcloud compute instances create reddit-app1 \
+  --boot-disk-size=10GB \
+  --image-family ubuntu-1604-lts \
+  --image-project=ubuntu-os-cloud \
+  --machine-type=g1-small \
+  --tags puma-server \
+  --metadata-from-file startup-script=startup_script.sh
+  --restart-on-failure
 
-ssh -A -T dennisananiev@35.241.138.100 ssh dennisananiev@10.132.0.5
+gcloud compute firewall-rules create puma \
+    --network=default \
+    --priority=1000 \
+    --direction=INGRESS \
+    --action=allow \
+    --source-ranges=0.0.0.0/0 \
+    --rules=tcp:9292
 
-#alias
 
-
-alias someinternalhost="ssh -A -t dennisananiev@35.241.138.100 ssh dennisananiev@10.132.0.5"
