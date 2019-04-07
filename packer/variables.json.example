@@ -1,0 +1,5 @@
+{ 
+ "project_id": "ananiev-infra1", 
+  "source_image_family":"ubuntu-1904-lts",
+  "machine_type":"f1-micro"
+}
