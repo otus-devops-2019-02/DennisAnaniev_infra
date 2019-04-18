@@ -1,0 +1,5 @@
+project = "ananiev-infra"
+public_key_path = "/Users/dennisananiev/Documents/OTUS_DevOps/gcp_bastion/ssh_gcp_keys/otus_rsa.pub"
+private_key_path = "/Users/dennisananiev/Documents/OTUS_DevOps/gcp_bastion/ssh_gcp_keys/otus_rsa"
+disk_image = "reddit-base"
+region = "europe-west1-d"	
