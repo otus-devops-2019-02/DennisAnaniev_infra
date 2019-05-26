@@ -18,7 +18,6 @@ access_config = {
 nat_ip = "${google_compute_address.app_ip.address}"
 }
 }
-}
 resource "google_compute_firewall" "firewall_puma" {
 name    = "allow-puma-default"
 network = "default"
@@ -33,4 +32,5 @@ ports    = ["9292"]
 
 resource "google_compute_address" "app_ip" {
 name = "reddit-app-ip"
+}
 }
