@@ -1,0 +1,7 @@
+{
+    "project_id": "ananiev-infra",
+    "source_image_family": "ubuntu-1604-lts",
+    "machine_type": "f1-micro",
+    "network": "net",
+    "tags": "http, https"
+}
