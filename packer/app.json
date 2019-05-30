@@ -1,0 +1,30 @@
+{
+  "variables": {
+    "project_id": "ananiev-infra",
+    "source_image_family": "ubuntu-1604-lts",
+     "machine_type": "f1-micro"
+  },
+
+    "builders": [
+        {
+            "type": "googlecompute",
+            "project_id": "{{user `project_id`}}",
+            "image_name": "reddit-app-base{{timestamp}}",
+            "image_description": "Image for reddit application deployment",
+            "image_family": "reddit-app-base",
+            "source_image_family": "{{user `source_image_family`}}",
+            "zone": "europe-west1-b",
+            "disk_size": "50",
+            "disk_type": "pd-ssd",
+            "ssh_username": "appuser",
+            "machine_type": "{{user `machine_type`}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_mongodb.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+    ]
+}
